@@ -3,23 +3,30 @@
 
 from cgi import print_form
 
-
+#defintiion de fonction pour imc
 def imc_u():
-    poids = int(input('entrez votre poids en kg :'))
-    grandeur = int(input('entrez votre grandeur en metre:'))
+    poids = float(input('entrez votre poids en kg :'))
+    grandeur = float(input('entrez votre grandeur en metre:'))
     imc_personne = (poids / (grandeur)**2)
+    if (imc_personne < 18.5) :
+        imc_categorie = "poids insuffisant"
 
-imc_u()
-if (imc_personne < 18.5) :
-    imc_personne = str("poids insuffisant")
-if (imc_personne >= 18.5 or < 25) :
-    imc_personne = str("poids normal")
-if (imc_personne >= 25 or < 30):
-    imc_personne = str("Excès de poids")
-if (imc_personne >= 30 or < 35):
-    imc_personne = str("Obeisté, classe I")
-if (imc_personne >= 35 or < 40) :
-    imc_personne = str("Obeisté, classe II")
-if (imc_personne >= 40) :
-    imc_personne = str("Obeisté, classe III")
-print(f" votre IMC : {imc_personne} ")
+    elif 18.5 <= imc_personne  < 25:
+        imc_categorie = "poids normal"
+
+    elif 25 <= imc_personne < 30 :
+        imc_categorie = "Excès de poids"
+
+    elif 30 <= imc_personne < 35 :
+        imc_categorie = "Obeisté, classe I"
+
+    elif 35 <= imc_personne < 40 :
+        imc_categorie = "Obeisté, classe II"
+
+    elif imc_personne >= 40 :
+        imc_categorie = "Obeisté, classe III"
+    return imc_categorie
+
+imc_categorie = imc_u()
+
+print(f" votre catégorie d'IMC : {imc_categorie} ")
