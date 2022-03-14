@@ -10,7 +10,7 @@ def calcul_imc():
         msg = "Poids santé"
     elif 25 <=  imc < 30 :
         msg = "Excès de poids"
-    elif 30 <= imc < 40  :
+    elif 30 <= imc < 999  :
         msg = "Obèse"
     return msg
 
