@@ -38,15 +38,9 @@ def expression_triste():
           |         |      
           |    {bouche}    |      
           TTTTTTTTTTT      """ )
-    sleep(0.5)
+        sleep(1)
 
 #expression_triste()
 
+def imprimer_braille():
 
-
-
-
-
-
-
-print.upper('              jaime manger le "carrée" de sable            ')
